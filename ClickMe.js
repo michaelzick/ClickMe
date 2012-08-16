@@ -1,23 +1,18 @@
 $('document').ready(function(){
 
-var clickMe;
-var sizeMe;
-var ogWidth = $('.clickMe').css('width');
+function clickMe(wide, op1, op2) {
 
-var sizeMe = {
-    wide: '25%',
-    high: '12.5%',
-    op1: '0.4',
-    op2: '1'
-};
-
-var clickMe = function() {
+    this.wide = wide;
+    this.op1 = op1;
+    this.op2 = op2;
+    ogWidth = $('.clickMe').css('width');
 
     $('.clickMe').toggle(function() {
-        $(this).css('opacity', sizeMe.op1).css('width', sizeMe.wide);
+        $(this).css('opacity', op1).css('width', wide);
     }, function() {
-        $(this).css('opacity', sizeMe.op2).css('width', ogWidth);
+        $(this).css('opacity', op2).css('width', ogWidth);
     });
-};
-clickMe();
+}
+
+clickMe('50%', '0.4', '1');
 });
